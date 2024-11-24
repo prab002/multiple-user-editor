@@ -41,7 +41,7 @@ export function AppSidebar() {
   return (
     <Sidebar side="right">
       <SidebarContent className="bg-gradient-to-br from-[#202428] via-[#1f1f1f] to-[#3a3b3c] h-screen text-white">
-        <div className="flex flex-col p-4">
+        <div className="flex flex-col p-4 justify-between">
           {/* logo */}
           <div className=" bg-blue-800 flex items-center gap-2 p-4  rounded-lg">
             <Image
@@ -80,7 +80,7 @@ export function AppSidebar() {
           </div>
 
           {/* copy room code */}
-          <div className="mt-2">
+          <div className="mt-2 flex flex-col gap-4">
             <Button
               onClick={handleCopy}
               className={`rounded-xl w-full text-black text-start ${
@@ -93,6 +93,15 @@ export function AppSidebar() {
                 {isCopied ? "Copied!" : "Copy Room Code"}
               </span>
               <ClipboardList />
+            </Button>
+            <Button
+              className={`rounded-xl w-full text-black text-start ${
+                isCopied
+                  ? "bg-green-500 text-white shadow-lg ring-2 ring-green-400"
+                  : "bg-[#e1ff05] shadow light-blue-shadow"
+              } hover:bg-blue-600 hover:text-green transition-all`}
+            >
+              Leave
             </Button>
           </div>
         </div>
